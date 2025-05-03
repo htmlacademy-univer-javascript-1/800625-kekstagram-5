@@ -17,4 +17,3 @@ function isPalindrome(str) {
 
 checkStringLength('12121', 6);
 isPalindrome('а роза упала на лапу азора');
-master

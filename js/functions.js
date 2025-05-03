@@ -14,6 +14,5 @@ function isPalindrome(str) {
   // Сравниваем нормализованную строку с перевернутой версией
   return normalizedStr === reversedStr;
 }
-
 checkStringLength('12121', 6);
 isPalindrome('а роза упала на лапу азора');

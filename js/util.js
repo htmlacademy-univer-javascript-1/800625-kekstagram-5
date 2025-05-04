@@ -1,5 +1,5 @@
 
-import { MIN_AVATAR_NUMBER, MAX_AVATAR_NUMBER, authorNames, photoDescriptions } from './data';
+import { MIN_AVATAR_NUMBER, MAX_AVATAR_NUMBER, authorNames, photoDescriptions } from './data.js';
 
 
 export function getRandomNumber(min, max) {

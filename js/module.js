@@ -1,6 +1,6 @@
 
 import { generatePhotoArray } from './data.js';
-import { openPicture } from './openbigPic.js';
+import { openPicture } from './openBigPic.js';
 
 export const getRenderedCards = () => {
   const pictureTemplate = document

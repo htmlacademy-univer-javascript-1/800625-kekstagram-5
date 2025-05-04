@@ -1,3 +1,4 @@
+
 import { generatePhotoArray } from './data';
 
 const NUM_PHOTOS = 25; // Количество фотографий
@@ -8,3 +9,4 @@ function getGeneratedPhotos() {
 }
 
 getGeneratedPhotos();
+

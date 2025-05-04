@@ -1,4 +1,3 @@
-
 import { getRandomNumber, getRandomPhotoDescription } from './util.js';
 
 const MIN_LIKES = 15;
@@ -7,6 +6,8 @@ const MIN_AVATAR_NUMBER = 1;
 const MAX_AVATAR_NUMBER = 1;
 const MIN_COMMENTS_COUNT = 0;
 const MAX_COMMENTS_COUNT = 30;
+const MAX_HASHTAGS_COUNT = 5;
+const MAX_DESCRIPTION_LENGTH = 140;
 
 
 export const authorNames = ['Иван', 'Анна', 'Петр', 'Мария', 'Алексей', 'Елена', 'Дмитрий', 'Ольга', 'Сергей', 'Наталья'];
@@ -19,7 +20,6 @@ const commentsExamples = [
   'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!',
 ];
-
 export const photoDescriptions = [
   'Красивый закат на пляже',
   'Горизонтальное излучение солнца в лесу',
@@ -48,10 +48,7 @@ export function generatePhoto(id) {
   const url = `photos/${id}.jpg`;
   const description = getRandomPhotoDescription();
   const likes = getRandomNumber(MIN_LIKES, MAX_LIKES);
-
   const comments = generateComments(getRandomNumber(MIN_COMMENTS_COUNT, MAX_COMMENTS_COUNT));
-
-
   return {
     id,
     url,
@@ -71,4 +68,4 @@ export function generatePhotoArray(numPhotos) {
 
   return photoArray;
 }
-export {MIN_AVATAR_NUMBER, MAX_AVATAR_NUMBER};
+export {MIN_AVATAR_NUMBER, MAX_AVATAR_NUMBER, MAX_HASHTAGS_COUNT, MAX_DESCRIPTION_LENGTH};

@@ -1,7 +1,5 @@
 
 import { MIN_AVATAR_NUMBER, MAX_AVATAR_NUMBER, authorNames, photoDescriptions } from './data.js';
-
-
 export function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -19,3 +17,9 @@ export function getRandomPhotoDescription() {
   const randomIndex = getRandomNumber(0, photoDescriptions.length - 1);
   return photoDescriptions[randomIndex];
 }
+
+export const onDocumentKeydown = (evt, closingFunc) => {
+  if (evt.key === 'Escape') {
+    closingFunc(evt);
+  }
+};

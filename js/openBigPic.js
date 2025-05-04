@@ -10,9 +10,7 @@ const onDocumentKeydown = (evt) => {
 const showNextComments = () => {
   let currentComment = document.querySelector('.social__comment.hidden');
   let i = 0;
-
-
-  for (; i < 5; i++) {
+ for (; i < 5; i++) {
     if (currentComment === null) {
       commentsLoader.classList.add('hidden');
       break;
@@ -62,7 +60,7 @@ function openPicture(evt, url, description, likes, comments) {
   openedPicture
     .querySelector('.big-picture__cancel')
     .addEventListener('click', closePicture);
-  document.addEventListener('keydown', onDocumentKeydown);
+  document.addEventListener('keydown', onDocumentKeydown(closePicture));
 
   openedPicture
     .querySelector('.social__comments-loader')
@@ -73,7 +71,7 @@ function closePicture(evt) {
   document.body.classList.remove('modal-open');
   document.querySelector('.big-picture').classList.add('hidden');
   evt.target.removeEventListener('click', closePicture);
-  document.removeEventListener('keydown', onDocumentKeydown);
+  document.removeEventListener('keydown', onDocumentKeydown(closePicture));
   document
     .querySelector('.social__comments-loader')
     .removeEventListener('click', showNextComments);

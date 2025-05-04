@@ -1,4 +1,3 @@
-
 import { generatePhotoArray } from './data.js';
 import { openPicture } from './openBigPic.js';
 

@@ -1,3 +1,4 @@
+
 import { getRandomNumber, getRandomAvatarNumber, getRandomAuthorName, getRandomPhotoDescription } from './util';
 
 const MIN_LIKES = 15;
@@ -28,6 +29,7 @@ export const photoDescriptions = [
   // Добавьте здесь ещё описаний по вашему усмотрению
 ];
 
+
 export function generateRandomComment() {
   const randomIndex = getRandomNumber(0, comments.length - 1);
   const commentText = comments[randomIndex];
@@ -51,6 +53,7 @@ export function generatePhoto(id) {
     const comment = generateRandomComment();
     commentsMassive.push(comment);
   }
+
 
   return {
     id,

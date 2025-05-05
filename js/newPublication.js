@@ -1,5 +1,8 @@
 import { onDocumentKeydown } from './util.js';
 import { MAX_HASHTAGS_COUNT, MAX_DESCRIPTION_LENGTH } from './data.js';
+import {resetEffect, initEffect} from './effects.js';
+import {resetScale} from './scale.js';
+
 const uploadForm = document.querySelector('.img-upload__form');
 const uploadInput = uploadForm.querySelector('.img-upload__input');
 const imageOverlay = uploadForm.querySelector('.img-upload__overlay.hidden');
@@ -75,6 +78,8 @@ pristine.addValidator(
 
 function closeOverlay(){
   imageOverlay.classList.add('hidden');
+  resetEffect();
+  resetScale();
   document.body.classList.remove('modal-open');
   closeButton.removeEventListener('click', closeOverlay);
   document.removeEventListener('keydown', onDocumentKeydown(closeOverlay));
@@ -85,6 +90,7 @@ function closeOverlay(){
 }
 
 function openOverlay() {
+  initEffect();
   imageOverlay.classList.remove('hidden');
   document.body.classList.add('modal-open');
   closeButton.addEventListener('click', closeOverlay);

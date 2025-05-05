@@ -9,6 +9,14 @@ const MAX_COMMENTS_COUNT = 30;
 const MAX_HASHTAGS_COUNT = 5;
 const MAX_DESCRIPTION_LENGTH = 140;
 
+const SCALE = {
+  MIN: 25,
+  MAX: 100
+};
+
+const SCALE_STEP = 25;
+
+const DEFAULT_SCALE = 100;
 
 export const authorNames = ['Иван', 'Анна', 'Петр', 'Мария', 'Алексей', 'Елена', 'Дмитрий', 'Ольга', 'Сергей', 'Наталья'];
 
@@ -49,6 +57,7 @@ export function generatePhoto(id) {
   const description = getRandomPhotoDescription();
   const likes = getRandomNumber(MIN_LIKES, MAX_LIKES);
   const comments = generateComments(getRandomNumber(MIN_COMMENTS_COUNT, MAX_COMMENTS_COUNT));
+
   return {
     id,
     url,
@@ -68,4 +77,4 @@ export function generatePhotoArray(numPhotos) {
 
   return photoArray;
 }
-export {MIN_AVATAR_NUMBER, MAX_AVATAR_NUMBER, MAX_HASHTAGS_COUNT, MAX_DESCRIPTION_LENGTH};
+export {MIN_AVATAR_NUMBER, MAX_AVATAR_NUMBER, MAX_HASHTAGS_COUNT, MAX_DESCRIPTION_LENGTH, SCALE, SCALE_STEP, DEFAULT_SCALE};

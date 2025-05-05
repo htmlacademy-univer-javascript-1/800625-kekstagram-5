@@ -1,16 +1,13 @@
+import { onDocumentKeydown } from './util.js';
+
 const commentTemplate = document.querySelector('.social__comment');
 const commentsLoader = document.querySelector('.comments-loader');
-
-const onDocumentKeydown = (evt) => {
-  if (evt.key === 'Escape') {
-    closePicture(evt);
-  }
-};
 
 const showNextComments = () => {
   let currentComment = document.querySelector('.social__comment.hidden');
   let i = 0;
- for (; i < 5; i++) {
+
+  for (; i < 5; i++) {
     if (currentComment === null) {
       commentsLoader.classList.add('hidden');
       break;

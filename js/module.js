@@ -38,5 +38,4 @@ export const getRenderedCards = async () => {
     errorBlock.append(errorMessage);
     document.querySelector('.img-upload').append(errorBlock);
   }
-
 };
